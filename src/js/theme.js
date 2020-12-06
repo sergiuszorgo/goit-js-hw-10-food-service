@@ -10,11 +10,13 @@ const refs = {
 
 refs.toggleSwitch.addEventListener('change', e => {
     if (e.target.checked) {
-        refs.body.classList.toggle(Theme.DARK);
+        refs.body.classList.remove(Theme.LIGHT);
+        refs.body.classList.add(Theme.DARK);
         localStorage.setItem('theme', 'dark-theme');
     }
     else {
-        refs.body.classList.toggle(Theme.LIGHT);
+        refs.body.classList.remove(Theme.DARK);
+        refs.body.classList.add(Theme.LIGHT);
         localStorage.setItem('theme', 'light-theme');
     }
 });
